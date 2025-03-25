@@ -27,7 +27,7 @@
         border-radius: 1rem;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         text-align: center;
-        height: calc(100vh - 4rem);
+        min-height: calc(100vh - 4rem);
       }
 
       .container div {
@@ -45,15 +45,9 @@
         }
       }
 
-      @media ((min-width: 430px) and (max-width: 600px)) {
+      @media ((min-width: 430px)) {
         img.logo {
           height: 400px;
-        }
-      }
-
-      @media (min-width: 600px) {
-        img.logo {
-          height: 500px;
         }
       }
 
@@ -93,6 +87,13 @@
       a.link:hover {
         text-decoration: underline;
       }
+
+      .store-buttons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
     </style>
   </head>
 
@@ -126,6 +127,24 @@
         <a id="privacyLink" href="privacy_policy.html?lang=ar" class="link">
           سياسة الخصوصية
         </a>
+
+        <div class="store-buttons">
+          <a href="https://apps.apple.com/app/idXXXXXXXXX" target="_blank">
+            <img src="app_store/.png" alt="Download on the App Store" />
+          </a>
+
+          <a
+            href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=ar"
+            target="_blank"
+          >
+            <img
+              src="google_play/ar_badge_web_generic.png"
+              alt="احصل عليه من Google Play"
+              width="181"
+              height="70"
+            />
+          </a>
+        </div>
       </div>
 
       <div id="en" class="lang active">
@@ -141,6 +160,24 @@
         <a id="privacyLink" href="privacy_policy.html?lang=en" class="link">
           Privacy Policy
         </a>
+
+        <div class="store-buttons">
+          <a href="https://apps.apple.com/app/idXXXXXXXXX" target="_blank">
+            <img src="app_store/.png" alt="Download on the App Store" />
+          </a>
+
+          <a
+            href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=en"
+            target="_blank"
+          >
+            <img
+              src="google_play/en_badge_web_generic.png"
+              alt="Get it on Google Play"
+              width="181"
+              height="70"
+            />
+          </a>
+        </div>
       </div>
 
       <div id="es" class="lang">
@@ -156,6 +193,24 @@
         <a id="privacyLink" href="privacy_policy.html?lang=es" class="link">
           Política de privacidad
         </a>
+
+        <div class="store-buttons">
+          <a href="https://apps.apple.com/app/idXXXXXXXXX" target="_blank">
+            <img src="app_store/.png" alt="Download on the App Store" />
+          </a>
+
+          <a
+            href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=es"
+            target="_blank"
+          >
+            <img
+              src="google_play/es_badge_web_generic.png"
+              alt="Disponible en Google Play"
+              width="181"
+              height="70"
+            />
+          </a>
+        </div>
       </div>
 
       <div id="fr" class="lang">
@@ -171,6 +226,24 @@
         <a id="privacyLink" href="privacy_policy.html?lang=fr" class="link">
           Politique de confidentialité
         </a>
+
+        <div class="store-buttons">
+          <a href="https://apps.apple.com/app/idXXXXXXXXX" target="_blank">
+            <img src="app_store/.png" alt="Download on the App Store" />
+          </a>
+
+          <a
+            href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=fr"
+            target="_blank"
+          >
+            <img
+              src="google_play/fr_badge_web_generic.png"
+              alt="Disponible sur Google Play"
+              width="181"
+              height="70"
+            />
+          </a>
+        </div>
       </div>
 
       <div id="it" class="lang">
@@ -186,6 +259,24 @@
         <a id="privacyLink" href="privacy_policy.html?lang=it" class="link">
           Informativa sulla privacy
         </a>
+
+        <div class="store-buttons">
+          <a href="https://apps.apple.com/app/idXXXXXXXXX" target="_blank">
+            <img src="app_store/.png" alt="Download on the App Store" />
+          </a>
+
+          <a
+            href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=it"
+            target="_blank"
+          >
+            <img
+              src="google_play/it_badge_web_generic.png"
+              alt="Disponibile sur Google Play"
+              width="181"
+              height="70"
+            />
+          </a>
+        </div>
       </div>
 
       <div id="nl" class="lang">
@@ -201,6 +292,24 @@
         <a id="privacyLink" href="privacy_policy.html?lang=nl" class="link">
           Privacybeleid
         </a>
+
+        <div class="store-buttons">
+          <a href="https://apps.apple.com/app/idXXXXXXXXX" target="_blank">
+            <img src="app_store/.png" alt="Download on the App Store" />
+          </a>
+
+          <a
+            href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=nl"
+            target="_blank"
+          >
+            <img
+              src="google_play/nl_badge_web_generic.png"
+              alt="Ontdek het op Google Play"
+              width="181"
+              height="70"
+            />
+          </a>
+        </div>
       </div>
 
       <div id="pt" class="lang">
@@ -216,6 +325,24 @@
         <a id="privacyLink" href="privacy_policy.html?lang=pt" class="link">
           Política de privacidade
         </a>
+
+        <div class="store-buttons">
+          <a href="https://apps.apple.com/app/idXXXXXXXXX" target="_blank">
+            <img src="app_store/.png" alt="Download on the App Store" />
+          </a>
+
+          <a
+            href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=pt"
+            target="_blank"
+          >
+            <img
+              src="google_play/pt_badge_web_generic.png"
+              alt="Obter no Google Play"
+              width="181"
+              height="70"
+            />
+          </a>
+        </div>
       </div>
     </div>
 
