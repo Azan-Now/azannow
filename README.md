@@ -4,7 +4,7 @@ This is the [website](https://azan-now.github.io/azannow/) for the Azan Now appl
 
 ## Download on the App Store
 
-[Azan Now on the App Store](https://apps.apple.com/app/idXXXXXXXXX)
+[Azan Now on the App Store](https://apps.apple.com/app/azan-now/id6743726835)
 
 ## Download on Google Play
 
