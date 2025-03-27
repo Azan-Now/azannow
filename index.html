@@ -22,6 +22,39 @@
     <meta name="apple-mobile-web-app-title" content="Azan Now" />
     <link rel="manifest" href="/azannow/site.webmanifest" />
 
+    <!-- Open Graph Meta Tags (Facebook, LinkedIn, WhatsApp, etc.) -->
+    <meta
+      property="og:title"
+      content="Azan Now – Accurate Prayer Times with a Beautiful Design"
+    />
+    <meta
+      property="og:description"
+      content="Get precise prayer times based on your location. Azan Now supports your daily routine with simplicity and elegance."
+    />
+    <meta
+      property="og:image"
+      content="https://azan-now.github.io/azannow/preview.png"
+    />
+    <meta property="og:url" content="https://azan-now.github.io/azannow/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Azan Now" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Azan Now – Accurate Prayer Times with a Beautiful Design"
+    />
+    <meta
+      name="twitter:description"
+      content="Get precise prayer times based on your location. Azan Now supports your daily routine with simplicity and elegance."
+    />
+    <meta
+      name="twitter:image"
+      content="https://azan-now.github.io/azannow/preview.png"
+    />
+    <!-- <meta name="twitter:site" content="@YourTwitterHandle" /> -->
+
     <style>
       body {
         margin: 0;
@@ -37,29 +70,40 @@
       }
 
       .container {
-        max-width: 600px;
+        max-width: 1100px;
         width: 100%;
         background: #fff;
         overflow: hidden;
         border-radius: 1rem;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         min-height: calc(100vh - 4rem);
+        margin: 0 auto;
       }
 
       .container > div {
         padding: 2rem;
       }
 
+      .i18n {
+        display: none;
+      }
+
+      .i18n.active {
+        display: block;
+      }
+
       .hero {
-        background: linear-gradient(135deg, #0077cc, #0099cc);
+        display: flex;
+        justify-content: space-between;
+        background: linear-gradient(135deg, #4a90e2, #2c3e50);
         color: white;
-        padding: 3rem 1.5rem;
-        border-radius: 1rem 1rem 0 0;
-        text-align: center;
       }
 
       .hero-content {
-        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem 1rem;
       }
 
       .hero h1 {
@@ -72,32 +116,79 @@
         margin: 0;
       }
 
-      img.logo {
-        margin-bottom: 1rem;
+      nav {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
       }
 
-      select {
+      nav label {
+        font-size: 1.5rem;
+      }
+
+      nav select {
         padding: 0.5rem 1rem;
         font-size: 1rem;
         border-radius: 5px;
         border: 1px solid #ccc;
       }
 
-      .i18n {
-        display: none;
+      .hero-phones {
+        align-self: end;
       }
 
-      .i18n.active {
-        display: block;
+      .phone {
+        max-height: 300px;
+        height: auto;
+        width: auto;
       }
 
-      .store-buttons {
-        padding-top: 2rem;
+      @media (max-width: 768px) {
+        .phone {
+          max-height: 220px;
+        }
       }
 
-      h1 {
-        margin-bottom: 1rem;
-        font-size: 1.8rem;
+      @media (max-width: 684px) {
+        .hero-content {
+          align-items: center;
+          text-align: center;
+          width: 100%;
+        }
+
+        .store-buttons {
+          justify-content: center;
+        }
+
+        .hero-phones,
+        .phone {
+          display: none;
+        }
+      }
+
+      @keyframes vibrate {
+        0% {
+          transform: translate(0);
+        }
+        20% {
+          transform: translate(1px, -1px);
+        }
+        40% {
+          transform: translate(-1px, 1px);
+        }
+        60% {
+          transform: translate(1px, 1px);
+        }
+        80% {
+          transform: translate(-1px, -1px);
+        }
+        100% {
+          transform: translate(0);
+        }
+      }
+
+      .phone:hover {
+        animation: vibrate 0.3s linear infinite;
       }
 
       h2 {
@@ -163,7 +254,7 @@
 
       .store-buttons {
         display: flex;
-        justify-content: center;
+        padding-top: 2rem;
         align-items: center;
         flex-wrap: wrap;
         gap: 1rem;
@@ -174,249 +265,300 @@
   <body>
     <div class="container">
       <section class="hero">
-        <div class="hero-content i18n i18n-ar">
-          <img src="logo.png" width="120" height="120" alt="Azan Now Logo" />
+        <div class="hero-content">
+          <img
+            src="logo.svg"
+            width="120"
+            height="120"
+            alt="Azan Now Logo"
+            class="img-logo"
+          />
 
-          <h1>مرحبًا بك في ”الأذان الآن“</h1>
-          <p>أوقات صلاة دقيقة. بدون تسجيل. خصوصية تامة.</p>
+          <div class="i18n i18n-ar">
+            <h1>الأذان الآن</h1>
 
-          <div class="store-buttons">
-            <a
-              href="https://apps.apple.com/app/azan-now/id6743726835"
-              target="_blank"
-            >
-              <img
-                src="app_store/Download_on_the_App_Store_Badge_AR_RGB_blk_102417.svg"
-                alt="تنزيل من App Store"
-                width="120"
-                height="40"
-              />
-            </a>
+            <p>أوقات صلاة دقيقة. بدون تسجيل. خصوصية تامة.</p>
 
-            <a
-              href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=ar"
-              target="_blank"
-            >
-              <img
-                src="google_play/ar_badge_web_generic.png"
-                alt="احصل عليه من Google Play"
-                width="150"
-                height="58"
-              />
-            </a>
+            <div class="store-buttons">
+              <a
+                href="https://apps.apple.com/app/azan-now/id6743726835"
+                target="_blank"
+              >
+                <img
+                  src="app_store/Download_on_the_App_Store_Badge_AR_RGB_blk_102417.svg"
+                  alt="تنزيل من App Store"
+                  width="120"
+                  height="40"
+                />
+              </a>
+
+              <a
+                href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=ar"
+                target="_blank"
+              >
+                <img
+                  src="google_play/ar_badge_web_generic.png"
+                  alt="احصل عليه من Google Play"
+                  width="150"
+                  height="58"
+                />
+              </a>
+            </div>
           </div>
+
+          <div class="i18n i18n-en active">
+            <h1>Welcome to Azan Now</h1>
+            <p>Accurate prayer times. 100% private. No login.</p>
+
+            <div class="store-buttons">
+              <a
+                href="https://apps.apple.com/app/azan-now/id6743726835"
+                target="_blank"
+              >
+                <img
+                  src="app_store/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+                  alt="Download on the App Store"
+                  width="120"
+                  height="40"
+                />
+              </a>
+
+              <a
+                href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=en"
+                target="_blank"
+              >
+                <img
+                  src="google_play/en_badge_web_generic.png"
+                  alt="Get it on Google Play"
+                  width="150"
+                  height="58"
+                />
+              </a>
+            </div>
+          </div>
+
+          <div class="i18n i18n-es">
+            <h1>Bienvenido a Azan Now</h1>
+            <p>Horarios de oración precisos y privados. Sin cuenta.</p>
+
+            <div class="store-buttons">
+              <a
+                href="https://apps.apple.com/app/azan-now/id6743726835"
+                target="_blank"
+              >
+                <img
+                  src="app_store/Download_on_the_App_Store_Badge_ES_RGB_blk_100217.svg"
+                  alt="Consíguelo en el App Store"
+                  width="120"
+                  height="40"
+                />
+              </a>
+
+              <a
+                href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=es"
+                target="_blank"
+              >
+                <img
+                  src="google_play/es_badge_web_generic.png"
+                  alt="Disponible en Google Play"
+                  width="137"
+                  height="53"
+                />
+              </a>
+            </div>
+          </div>
+
+          <div class="i18n i18n-fr">
+            <h1>Bienvenue sur Azan Now</h1>
+            <p>Horaires de prière précis. Sans compte. 100 % privé.</p>
+
+            <div class="store-buttons">
+              <a
+                href="https://apps.apple.com/app/azan-now/id6743726835"
+                target="_blank"
+              >
+                <img
+                  src="app_store/Download_on_the_App_Store_Badge_FR_RGB_blk_100517.svg"
+                  alt="Télécharger dans l’App Store"
+                  width="120"
+                  height="40"
+                />
+              </a>
+
+              <a
+                href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=fr"
+                target="_blank"
+              >
+                <img
+                  src="google_play/fr_badge_web_generic.png"
+                  alt="Disponible sur Google Play"
+                  width="137"
+                  height="53"
+                />
+              </a>
+            </div>
+          </div>
+
+          <div class="i18n i18n-it">
+            <h1>Benvenuto su Azan Now</h1>
+            <p>Orari di preghiera precisi. Nessuna login. Privacy totale.</p>
+
+            <div class="store-buttons">
+              <a
+                href="https://apps.apple.com/app/azan-now/id6743726835"
+                target="_blank"
+              >
+                <img
+                  src="app_store/Download_on_the_App_Store_Badge_IT_RGB_blk_100317.svg"
+                  alt="Scarica su App Store"
+                  width="120"
+                  height="40"
+                />
+              </a>
+
+              <a
+                href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=it"
+                target="_blank"
+              >
+                <img
+                  src="google_play/it_badge_web_generic.png"
+                  alt="Disponibile sur Google Play"
+                  width="137"
+                  height="53"
+                />
+              </a>
+            </div>
+          </div>
+
+          <div class="i18n i18n-nl">
+            <h1>Welkom bij Azan Now</h1>
+            <p>Precieze gebedstijden. Geen login. Volledige privacy.</p>
+
+            <div class="store-buttons">
+              <a
+                href="https://apps.apple.com/app/azan-now/id6743726835"
+                target="_blank"
+              >
+                <img
+                  src="app_store/Download_on_the_App_Store_Badge_NL_RGB_blk_100317.svg"
+                  alt="Download in de App Store"
+                  width="120"
+                  height="40"
+                />
+              </a>
+
+              <a
+                href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=nl"
+                target="_blank"
+              >
+                <img
+                  src="google_play/nl_badge_web_generic.png"
+                  alt="Ontdek het op Google Play"
+                  width="137"
+                  height="53"
+                />
+              </a>
+            </div>
+          </div>
+
+          <div class="i18n i18n-pt">
+            <h1>Bem-vindo ao Azan Now</h1>
+            <p>
+              Horários de oração precisos. Sem login, com privacidade total.
+            </p>
+
+            <div class="store-buttons">
+              <a
+                href="https://apps.apple.com/app/azan-now/id6743726835"
+                target="_blank"
+              >
+                <img
+                  src="app_store/Download_on_the_App_Store_Badge_PTPT_RGB_blk_100317.svg"
+                  alt="Descarregar na App Store"
+                  width="120"
+                  height="40"
+                />
+              </a>
+
+              <a
+                href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=pt"
+                target="_blank"
+              >
+                <img
+                  src="google_play/pt_badge_web_generic.png"
+                  alt="Obter no Google Play"
+                  width="137"
+                  height="53"
+                />
+              </a>
+            </div>
+          </div>
+
+          <nav>
+            <label for="language_switch">🌐</label>
+            <select id="language_switch" onchange="switchLanguage()">
+              <option value="ar">العربية</option>
+              <option value="en">English</option>
+              <option value="es">Español</option>
+              <option value="fr">Français</option>
+              <option value="it">Italiano</option>
+              <option value="nl">Nederlands</option>
+              <option value="pt">Português</option>
+            </select>
+          </nav>
         </div>
 
-        <div class="hero-content i18n i18n-en active">
-          <img src="logo.png" width="120" height="120" alt="Azan Now Logo" />
-
-          <h1>Welcome to Azan Now</h1>
-          <p>Accurate prayer times. 100% private. No login.</p>
-
-          <div class="store-buttons">
-            <a
-              href="https://apps.apple.com/app/azan-now/id6743726835"
-              target="_blank"
-            >
-              <img
-                src="app_store/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
-                alt="Download on the App Store"
-                width="120"
-                height="40"
-              />
-            </a>
-
-            <a
-              href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=en"
-              target="_blank"
-            >
-              <img
-                src="google_play/en_badge_web_generic.png"
-                alt="Get it on Google Play"
-                width="150"
-                height="58"
-              />
-            </a>
-          </div>
+        <div class="hero-phones">
+          <img
+            src="phones-ar.png"
+            width="599"
+            height="483"
+            alt="Azan Now screenshots"
+            class="phone i18n i18n-ar"
+          />
+          <img
+            src="phones-en.png"
+            width="596"
+            height="483"
+            alt="Azan Now screenshots"
+            class="phone i18n i18n-en active"
+          />
+          <img
+            src="phones-es.png"
+            width="596"
+            height="483"
+            alt="Azan Now screenshots"
+            class="phone i18n i18n-es"
+          />
+          <img
+            src="phones-fr.png"
+            width="596"
+            height="483"
+            alt="Azan Now screenshots"
+            class="phone i18n i18n-fr"
+          />
+          <img
+            src="phones-it.png"
+            width="596"
+            height="483"
+            alt="Azan Now screenshots"
+            class="phone i18n i18n-it"
+          />
+          <img
+            src="phones-nl.png"
+            width="596"
+            height="483"
+            alt="Azan Now screenshots"
+            class="phone i18n i18n-nl"
+          />
+          <img
+            src="phones-pt.png"
+            width="596"
+            height="483"
+            alt="Azan Now screenshots"
+            class="phone i18n i18n-pt"
+          />
         </div>
-
-        <div class="hero-content i18n i18n-es">
-          <img src="logo.png" width="120" height="120" alt="Azan Now Logo" />
-
-          <h1>Bienvenido a Azan Now</h1>
-          <p>Horarios de oración precisos y privados. Sin cuenta.</p>
-
-          <div class="store-buttons">
-            <a
-              href="https://apps.apple.com/app/azan-now/id6743726835"
-              target="_blank"
-            >
-              <img
-                src="app_store/Download_on_the_App_Store_Badge_ES_RGB_blk_100217.svg"
-                alt="Consíguelo en el App Store"
-                width="120"
-                height="40"
-              />
-            </a>
-
-            <a
-              href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=es"
-              target="_blank"
-            >
-              <img
-                src="google_play/es_badge_web_generic.png"
-                alt="Disponible en Google Play"
-                width="137"
-                height="53"
-              />
-            </a>
-          </div>
-        </div>
-
-        <div class="hero-content i18n i18n-fr">
-          <img src="logo.png" width="120" height="120" alt="Azan Now Logo" />
-
-          <h1>Bienvenue sur Azan Now</h1>
-          <p>Horaires de prière précis. Sans compte. 100 % privé.</p>
-
-          <div class="store-buttons">
-            <a
-              href="https://apps.apple.com/app/azan-now/id6743726835"
-              target="_blank"
-            >
-              <img
-                src="app_store/Download_on_the_App_Store_Badge_FR_RGB_blk_100517.svg"
-                alt="Télécharger dans l’App Store"
-                width="120"
-                height="40"
-              />
-            </a>
-
-            <a
-              href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=fr"
-              target="_blank"
-            >
-              <img
-                src="google_play/fr_badge_web_generic.png"
-                alt="Disponible sur Google Play"
-                width="137"
-                height="53"
-              />
-            </a>
-          </div>
-        </div>
-
-        <div class="hero-content i18n i18n-it">
-          <img src="logo.png" width="120" height="120" alt="Azan Now Logo" />
-
-          <h1>Benvenuto su Azan Now</h1>
-          <p>Orari di preghiera precisi. Nessuna login. Privacy totale.</p>
-
-          <div class="store-buttons">
-            <a
-              href="https://apps.apple.com/app/azan-now/id6743726835"
-              target="_blank"
-            >
-              <img
-                src="app_store/Download_on_the_App_Store_Badge_IT_RGB_blk_100317.svg"
-                alt="Scarica su App Store"
-                width="120"
-                height="40"
-              />
-            </a>
-
-            <a
-              href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=it"
-              target="_blank"
-            >
-              <img
-                src="google_play/it_badge_web_generic.png"
-                alt="Disponibile sur Google Play"
-                width="137"
-                height="53"
-              />
-            </a>
-          </div>
-        </div>
-
-        <div class="hero-content i18n i18n-nl">
-          <img src="logo.png" width="120" height="120" alt="Azan Now Logo" />
-
-          <h1>Welkom bij Azan Now</h1>
-          <p>Precieze gebedstijden. Geen login. Volledige privacy.</p>
-
-          <div class="store-buttons">
-            <a
-              href="https://apps.apple.com/app/azan-now/id6743726835"
-              target="_blank"
-            >
-              <img
-                src="app_store/Download_on_the_App_Store_Badge_NL_RGB_blk_100317.svg"
-                alt="Download in de App Store"
-                width="120"
-                height="40"
-              />
-            </a>
-
-            <a
-              href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=nl"
-              target="_blank"
-            >
-              <img
-                src="google_play/nl_badge_web_generic.png"
-                alt="Ontdek het op Google Play"
-                width="137"
-                height="53"
-              />
-            </a>
-          </div>
-        </div>
-
-        <div class="hero-content i18n i18n-pt">
-          <img src="logo.png" width="120" height="120" alt="Azan Now Logo" />
-
-          <h1>Bem-vindo ao Azan Now</h1>
-          <p>Horários de oração precisos. Sem login, com privacidade total.</p>
-
-          <div class="store-buttons">
-            <a
-              href="https://apps.apple.com/app/azan-now/id6743726835"
-              target="_blank"
-            >
-              <img
-                src="app_store/Download_on_the_App_Store_Badge_PTPT_RGB_blk_100317.svg"
-                alt="Descarregar na App Store"
-                width="120"
-                height="40"
-              />
-            </a>
-
-            <a
-              href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=pt"
-              target="_blank"
-            >
-              <img
-                src="google_play/pt_badge_web_generic.png"
-                alt="Obter no Google Play"
-                width="137"
-                height="53"
-              />
-            </a>
-          </div>
-        </div>
-
-        <nav>
-          <label for="language_switch">🌍 اللغة / language:</label>
-          <select id="language_switch" onchange="switchLanguage()">
-            <option value="ar">العربية</option>
-            <option value="en">English</option>
-            <option value="es">Español</option>
-            <option value="fr">Français</option>
-            <option value="it">Italiano</option>
-            <option value="nl">Nederlands</option>
-            <option value="pt">Português</option>
-          </select>
-        </nav>
       </section>
 
       <div class="i18n i18n-ar">
@@ -454,6 +596,8 @@
           مثالي للمسلمين الباحثين عن تطبيق دقيق وهادئ لأوقات الصلاة، يحترم
           خصوصيتهم أينما كانوا.
         </p>
+
+        <hr />
 
         <div class="store-buttons">
           <a
@@ -535,6 +679,8 @@
           connected to their prayers — anytime, anywhere.
         </p>
 
+        <hr />
+
         <div class="store-buttons">
           <a
             href="https://apps.apple.com/app/azan-now/id6743726835"
@@ -615,6 +761,8 @@
           Ideal para musulmanes que desean seguir sus oraciones con precisión y
           total respeto por su privacidad — en cualquier lugar y momento.
         </p>
+
+        <hr />
 
         <div class="store-buttons">
           <a
@@ -703,6 +851,8 @@
           soient.
         </p>
 
+        <hr />
+
         <div class="store-buttons">
           <a
             href="https://apps.apple.com/app/azan-now/id6743726835"
@@ -788,6 +938,8 @@
           con precisione e totale riservatezza — ovunque si trovino.
         </p>
 
+        <hr />
+
         <div class="store-buttons">
           <a
             href="https://apps.apple.com/app/azan-now/id6743726835"
@@ -868,6 +1020,8 @@
           Perfect voor moslims die hun dagelijkse gebeden op een respectvolle,
           nauwkeurige en privé manier willen volgen — altijd en overal.
         </p>
+
+        <hr />
 
         <div class="store-buttons">
           <a
@@ -954,6 +1108,8 @@
           acompanhar suas orações com total respeito à privacidade — onde
           estiverem.
         </p>
+
+        <hr />
 
         <div class="store-buttons">
           <a
