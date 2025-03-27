@@ -43,29 +43,37 @@
         overflow: hidden;
         border-radius: 1rem;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        text-align: center;
         min-height: calc(100vh - 4rem);
       }
 
-      .container div {
+      .container > div {
         padding: 2rem;
       }
 
+      .hero {
+        background: linear-gradient(135deg, #0077cc, #0099cc);
+        color: white;
+        padding: 3rem 1.5rem;
+        border-radius: 1rem 1rem 0 0;
+        text-align: center;
+      }
+
+      .hero-content {
+        padding: 2rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin: 0;
+      }
+
       img.logo {
-        width: 100%;
-        object-fit: cover;
-      }
-
-      @media (max-width: 430px) {
-        img.logo {
-          height: 300px;
-        }
-      }
-
-      @media ((min-width: 430px)) {
-        img.logo {
-          height: 400px;
-        }
+        margin-bottom: 1rem;
       }
 
       select {
@@ -75,12 +83,16 @@
         border: 1px solid #ccc;
       }
 
-      .lang {
+      .i18n {
         display: none;
       }
 
-      .lang.active {
+      .i18n.active {
         display: block;
+      }
+
+      .store-buttons {
+        padding-top: 2rem;
       }
 
       h1 {
@@ -88,9 +100,51 @@
         font-size: 1.8rem;
       }
 
+      h2 {
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+        /* plus section title */
+        border-bottom: 2px solid #eee;
+        padding-bottom: 0.3rem;
+        margin-bottom: 1.5rem;
+      }
+
       p {
         font-size: 1.1rem;
         margin-bottom: 2rem;
+      }
+
+      ul {
+        list-style: none;
+        padding-inline-start: 0;
+        text-align: start;
+        margin-bottom: 2rem;
+      }
+
+      ul li {
+        position: relative;
+        padding-inline-start: 2rem;
+        margin-bottom: 1rem;
+        font-size: 1.05rem;
+        line-height: 1.6;
+      }
+
+      ul li::before {
+        content: "✅";
+        position: absolute;
+        inset-inline-start: 0;
+        top: 0;
+      }
+
+      .highlighted {
+        font-weight: bold;
+        background-color: #f0f8ff;
+        border-inline-start: 4px solid #0077cc;
+        padding: 1rem;
+        margin-top: 2rem;
+        border-radius: 0.5rem;
+        text-align: start;
       }
 
       a.link {
@@ -99,9 +153,11 @@
         text-decoration: none;
         color: #0077cc;
         font-weight: bold;
+        transition: color 0.3s ease;
       }
 
       a.link:hover {
+        color: #005fa3;
         text-decoration: underline;
       }
 
@@ -117,11 +173,240 @@
 
   <body>
     <div class="container">
-      <img src="logo.png" alt="Azan Now Logo" class="logo" />
+      <section class="hero">
+        <div class="hero-content i18n i18n-ar">
+          <img src="logo.png" width="120" height="120" alt="Azan Now Logo" />
 
-      <div>
+          <h1>مرحبًا بك في ”الأذان الآن“</h1>
+          <p>أوقات صلاة دقيقة. بدون تسجيل. خصوصية تامة.</p>
+
+          <div class="store-buttons">
+            <a
+              href="https://apps.apple.com/app/azan-now/id6743726835"
+              target="_blank"
+            >
+              <img
+                src="app_store/Download_on_the_App_Store_Badge_AR_RGB_blk_102417.svg"
+                alt="تنزيل من App Store"
+                width="120"
+                height="40"
+              />
+            </a>
+
+            <a
+              href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=ar"
+              target="_blank"
+            >
+              <img
+                src="google_play/ar_badge_web_generic.png"
+                alt="احصل عليه من Google Play"
+                width="150"
+                height="58"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-content i18n i18n-en active">
+          <img src="logo.png" width="120" height="120" alt="Azan Now Logo" />
+
+          <h1>Welcome to Azan Now</h1>
+          <p>Accurate prayer times. 100% private. No login.</p>
+
+          <div class="store-buttons">
+            <a
+              href="https://apps.apple.com/app/azan-now/id6743726835"
+              target="_blank"
+            >
+              <img
+                src="app_store/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+                alt="Download on the App Store"
+                width="120"
+                height="40"
+              />
+            </a>
+
+            <a
+              href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=en"
+              target="_blank"
+            >
+              <img
+                src="google_play/en_badge_web_generic.png"
+                alt="Get it on Google Play"
+                width="150"
+                height="58"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-content i18n i18n-es">
+          <img src="logo.png" width="120" height="120" alt="Azan Now Logo" />
+
+          <h1>Bienvenido a Azan Now</h1>
+          <p>Horarios de oración precisos y privados. Sin cuenta.</p>
+
+          <div class="store-buttons">
+            <a
+              href="https://apps.apple.com/app/azan-now/id6743726835"
+              target="_blank"
+            >
+              <img
+                src="app_store/Download_on_the_App_Store_Badge_ES_RGB_blk_100217.svg"
+                alt="Consíguelo en el App Store"
+                width="120"
+                height="40"
+              />
+            </a>
+
+            <a
+              href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=es"
+              target="_blank"
+            >
+              <img
+                src="google_play/es_badge_web_generic.png"
+                alt="Disponible en Google Play"
+                width="137"
+                height="53"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-content i18n i18n-fr">
+          <img src="logo.png" width="120" height="120" alt="Azan Now Logo" />
+
+          <h1>Bienvenue sur Azan Now</h1>
+          <p>Horaires de prière précis. Sans compte. 100 % privé.</p>
+
+          <div class="store-buttons">
+            <a
+              href="https://apps.apple.com/app/azan-now/id6743726835"
+              target="_blank"
+            >
+              <img
+                src="app_store/Download_on_the_App_Store_Badge_FR_RGB_blk_100517.svg"
+                alt="Télécharger dans l’App Store"
+                width="120"
+                height="40"
+              />
+            </a>
+
+            <a
+              href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=fr"
+              target="_blank"
+            >
+              <img
+                src="google_play/fr_badge_web_generic.png"
+                alt="Disponible sur Google Play"
+                width="137"
+                height="53"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-content i18n i18n-it">
+          <img src="logo.png" width="120" height="120" alt="Azan Now Logo" />
+
+          <h1>Benvenuto su Azan Now</h1>
+          <p>Orari di preghiera precisi. Nessuna login. Privacy totale.</p>
+
+          <div class="store-buttons">
+            <a
+              href="https://apps.apple.com/app/azan-now/id6743726835"
+              target="_blank"
+            >
+              <img
+                src="app_store/Download_on_the_App_Store_Badge_IT_RGB_blk_100317.svg"
+                alt="Scarica su App Store"
+                width="120"
+                height="40"
+              />
+            </a>
+
+            <a
+              href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=it"
+              target="_blank"
+            >
+              <img
+                src="google_play/it_badge_web_generic.png"
+                alt="Disponibile sur Google Play"
+                width="137"
+                height="53"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-content i18n i18n-nl">
+          <img src="logo.png" width="120" height="120" alt="Azan Now Logo" />
+
+          <h1>Welkom bij Azan Now</h1>
+          <p>Precieze gebedstijden. Geen login. Volledige privacy.</p>
+
+          <div class="store-buttons">
+            <a
+              href="https://apps.apple.com/app/azan-now/id6743726835"
+              target="_blank"
+            >
+              <img
+                src="app_store/Download_on_the_App_Store_Badge_NL_RGB_blk_100317.svg"
+                alt="Download in de App Store"
+                width="120"
+                height="40"
+              />
+            </a>
+
+            <a
+              href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=nl"
+              target="_blank"
+            >
+              <img
+                src="google_play/nl_badge_web_generic.png"
+                alt="Ontdek het op Google Play"
+                width="137"
+                height="53"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-content i18n i18n-pt">
+          <img src="logo.png" width="120" height="120" alt="Azan Now Logo" />
+
+          <h1>Bem-vindo ao Azan Now</h1>
+          <p>Horários de oração precisos. Sem login, com privacidade total.</p>
+
+          <div class="store-buttons">
+            <a
+              href="https://apps.apple.com/app/azan-now/id6743726835"
+              target="_blank"
+            >
+              <img
+                src="app_store/Download_on_the_App_Store_Badge_PTPT_RGB_blk_100317.svg"
+                alt="Descarregar na App Store"
+                width="120"
+                height="40"
+              />
+            </a>
+
+            <a
+              href="https://play.google.com/store/apps/details?id=com.tellibus.azannow&hl=pt"
+              target="_blank"
+            >
+              <img
+                src="google_play/pt_badge_web_generic.png"
+                alt="Obter no Google Play"
+                width="137"
+                height="53"
+              />
+            </a>
+          </div>
+        </div>
+
         <nav>
-          <label for="language_switch">🌍 اللغة / Language:</label>
+          <label for="language_switch">🌍 اللغة / language:</label>
           <select id="language_switch" onchange="switchLanguage()">
             <option value="ar">العربية</option>
             <option value="en">English</option>
@@ -132,19 +417,43 @@
             <option value="pt">Português</option>
           </select>
         </nav>
-      </div>
+      </section>
 
-      <div id="ar" class="lang">
-        <h1 id="title">مرحبًا بك في Azan Now</h1>
+      <div class="i18n i18n-ar">
+        <p>
+          اكتشف ”الأذان الآن“ (Azan Now) — تطبيق بسيط ومركّز على الخصوصية، يقدّم
+          لك أوقات الصلاة بدقة حسب موقعك. صُمّم للمسلمين حول العالم ليساعدك على
+          الحفاظ على صلواتك اليومية — بدون جمع أو تخزين أي بيانات شخصية.
+        </p>
 
-        <p id="description">توفر لك هذه الصفحة الوصول إلى الدعم الرسمي.</p>
+        <h2>🕌 الميزات الرئيسية</h2>
+        <ul>
+          <li>حساب دقيق لأوقات الصلاة حسب موقعك الجغرافي</li>
+          <li>طريقة حساب افتراضية وفقًا لبلدك (MWL، UOIF، أم القرى وغيرها)</li>
+          <li>يعمل بالموقع التقريبي أو الدقيق بناءً على الأذونات</li>
+          <li>🇲🇦 في المغرب: الأوقات متزامنة مع التوقيت الرسمي</li>
+        </ul>
 
-        <a id="supportLink" href="mailto:azannow.app@gmail.com" class="link">
-          الاتصال بالدعم
-        </a>
-        <a id="privacyLink" href="privacy_policy.html?lang=ar" class="link">
-          سياسة الخصوصية
-        </a>
+        <h2>🔐 الخصوصية أولًا</h2>
+        <p>
+          تطبيق ”الأذان الآن“ (Azan Now) لا يجمع أي معلومات شخصية. يتم جمع
+          بيانات تقنية مجهولة فقط (نوع الجهاز، نظام التشغيل، إصدار التطبيق)
+          لتحسين الأداء، وموقعك (إذا منحت الإذن) لعرض أوقات الصلاة بدقة. لا يتم
+          ربط أي بيانات بهويتك.
+        </p>
+
+        <h2>📱 لماذا تختار ”الأذان الآن“ (Azan Now)؟</h2>
+        <ul>
+          <li>بدون إعلانات أو تتبّع تجاري</li>
+          <li>خفيف وسريع ولا يتطلب تسجيلًا</li>
+          <li>لا يطلب أذونات غير ضرورية</li>
+          <li>بساطة واحترام كامل لخصوصيتك</li>
+        </ul>
+
+        <p class="highlighted">
+          مثالي للمسلمين الباحثين عن تطبيق دقيق وهادئ لأوقات الصلاة، يحترم
+          خصوصيتهم أينما كانوا.
+        </p>
 
         <div class="store-buttons">
           <a
@@ -171,21 +480,60 @@
             />
           </a>
         </div>
+
+        <div class="store-buttons">
+          <a id="supportLink" href="mailto:azannow.app@gmail.com" class="link">
+            الاتصال بالدعم
+          </a>
+          <a id="privacyLink" href="privacy_policy.html?lang=ar" class="link">
+            سياسة الخصوصية
+          </a>
+        </div>
       </div>
 
-      <div id="en" class="lang active">
-        <h1 id="title">Welcome to Azan Now</h1>
-
-        <p id="description">
-          This page provides access to our official support.
+      <div class="i18n i18n-en active">
+        <p>
+          Discover Azan Now — a simple, privacy-first app that provides accurate
+          Islamic prayer times based on your location. Designed for Muslims
+          around the world, it helps you stay connected to your daily prayers —
+          without collecting or storing any personal data.
         </p>
 
-        <a id="supportLink" href="mailto:azannow.app@gmail.com" class="link">
-          Contact Support
-        </a>
-        <a id="privacyLink" href="privacy_policy.html?lang=en" class="link">
-          Privacy Policy
-        </a>
+        <h2>🕌 Key Features</h2>
+        <ul>
+          <li>Accurate prayer times based on your geographic location</li>
+          <li>
+            Default calculation method adapted to your country (MWL, UOIF, Umm
+            al-Qura, and more)
+          </li>
+          <li>
+            Works with both approximate and precise location, depending on your
+            permissions
+          </li>
+          <li>🇲🇦 In Morocco: synchronized with official prayer timetables</li>
+        </ul>
+
+        <h2>🔐 Privacy-First Design</h2>
+        <p>
+          Azan Now collects no personal data. It only gathers anonymous
+          technical info (device type, OS, app version) for performance
+          monitoring, and your location (if granted) to display accurate prayer
+          times. None of this data is ever linked to your identity.
+        </p>
+
+        <h2>📱 Why Choose Azan Now?</h2>
+        <ul>
+          <li>No marketing tracking or ads</li>
+          <li>Lightweight and fast</li>
+          <li>No login or account required</li>
+          <li>No unnecessary permissions</li>
+          <li>100% privacy and simplicity</li>
+        </ul>
+
+        <p class="highlighted">
+          Ideal for Muslims looking for a clean, respectful way to stay
+          connected to their prayers — anytime, anywhere.
+        </p>
 
         <div class="store-buttons">
           <a
@@ -212,21 +560,61 @@
             />
           </a>
         </div>
+
+        <div class="store-buttons">
+          <a id="supportLink" href="mailto:azannow.app@gmail.com" class="link">
+            Contact Support
+          </a>
+          <a id="privacyLink" href="privacy_policy.html?lang=en" class="link">
+            Privacy Policy
+          </a>
+        </div>
       </div>
 
-      <div id="es" class="lang">
-        <h1 id="title">Bienvenido a Azan Now</h1>
-
-        <p id="description">
-          Esta página le da acceso a nuestro soporte oficial.
+      <div class="i18n i18n-es">
+        <p>
+          Descubre Azan Now — una aplicación sencilla y centrada en la
+          privacidad que te proporciona horarios de oración musulmana precisos
+          según tu ubicación. Diseñada para musulmanes de todo el mundo, te
+          ayuda a mantenerte conectado con tus oraciones diarias — sin recopilar
+          ni almacenar datos personales.
         </p>
 
-        <a id="supportLink" href="mailto:azannow.app@gmail.com" class="link">
-          Contactar Soporte
-        </a>
-        <a id="privacyLink" href="privacy_policy.html?lang=es" class="link">
-          Política de privacidad
-        </a>
+        <h2>🕌 Características principales</h2>
+        <ul>
+          <li>Horarios de oración precisos según tu ubicación geográfica</li>
+          <li>
+            Método de cálculo predeterminado adaptado a tu país (MWL, UOIF, Umm
+            al-Qura, etc.)
+          </li>
+          <li>
+            Funciona con localización aproximada o precisa, según los permisos
+            que concedas
+          </li>
+          <li>🇲🇦 En Marruecos: sincronizado con los horarios oficiales</li>
+        </ul>
+
+        <h2>🔐 Diseño centrado en la privacidad</h2>
+        <p>
+          Azan Now no recoge ningún dato personal. Solo recopila información
+          técnica anónima (tipo de dispositivo, sistema operativo, versión de la
+          app) para supervisar el rendimiento, y tu ubicación (si das permiso)
+          para mostrar los horarios de oración. Ningún dato se asocia a tu
+          identidad.
+        </p>
+
+        <h2>📱 ¿Por qué elegir Azan Now?</h2>
+        <ul>
+          <li>Sin anuncios ni seguimiento comercial</li>
+          <li>Ligera, rápida y sin registro</li>
+          <li>Sin permisos invasivos</li>
+          <li>Privacidad y simplicidad garantizadas</li>
+        </ul>
+
+        <p class="highlighted">
+          Ideal para musulmanes que desean seguir sus oraciones con precisión y
+          total respeto por su privacidad — en cualquier lugar y momento.
+        </p>
 
         <div class="store-buttons">
           <a
@@ -253,21 +641,67 @@
             />
           </a>
         </div>
+
+        <div class="store-buttons">
+          <a id="supportLink" href="mailto:azannow.app@gmail.com" class="link">
+            Contactar Soporte
+          </a>
+          <a id="privacyLink" href="privacy_policy.html?lang=es" class="link">
+            Política de privacidad
+          </a>
+        </div>
       </div>
 
-      <div id="fr" class="lang">
-        <h1 id="title">Bienvenue sur Azan Now</h1>
-
-        <p id="description">
-          Cette page vous permet d'accéder à notre assistance officielle.
+      <div class="i18n i18n-fr">
+        <p>
+          Découvrez Azan Now — une application simple et respectueuse de votre
+          vie privée qui vous fournit les horaires de prière musulmans avec
+          précision, selon votre localisation. Conçue pour les musulmans du
+          monde entier, elle vous accompagne au quotidien sans collecter ni
+          stocker de données personnelles.
         </p>
 
-        <a id="supportLink" href="mailto:azannow.app@gmail.com" class="link">
-          Contacter l’assistance
-        </a>
-        <a id="privacyLink" href="privacy_policy.html?lang=fr" class="link">
-          Politique de confidentialité
-        </a>
+        <h2>🕌 Fonctionnalités principales</h2>
+        <ul>
+          <li>
+            Horaires de prière précis basés sur votre position géographique
+          </li>
+          <li>
+            Méthode de calcul adaptée par défaut à votre pays (MWL, UOIF, Umm
+            al-Qura, etc.)
+          </li>
+          <li>
+            Fonctionne avec la géolocalisation approximative ou précise, selon
+            les permissions accordées
+          </li>
+          <li>
+            🇲🇦 Pour le Maroc : horaires synchronisés avec le calendrier officiel
+          </li>
+        </ul>
+
+        <h2>🔐 Respect total de votre vie privée</h2>
+        <p>
+          Azan Now ne collecte aucune donnée personnelle. Seules des
+          informations techniques anonymes (type d’appareil, système
+          d’exploitation, version de l’application) sont utilisées pour
+          améliorer les performances. Si vous l’autorisez, votre position est
+          utilisée pour calculer les horaires de prière. Aucune donnée n’est
+          liée à votre identité.
+        </p>
+
+        <h2>📱 Pourquoi choisir Azan Now ?</h2>
+        <ul>
+          <li>Aucune publicité ni suivi marketing</li>
+          <li>Léger, rapide et sans compte</li>
+          <li>Permissions réduites au strict nécessaire</li>
+          <li>Simplicité et confidentialité garanties</li>
+        </ul>
+
+        <p class="highlighted">
+          Parfait pour les musulmans souhaitant rester connectés à leurs prières
+          dans le respect total de leur vie privée — à tout moment, où qu’ils
+          soient.
+        </p>
 
         <div class="store-buttons">
           <a
@@ -294,21 +728,65 @@
             />
           </a>
         </div>
+
+        <div class="store-buttons">
+          <a id="supportLink" href="mailto:azannow.app@gmail.com" class="link">
+            Contacter l’assistance
+          </a>
+          <a id="privacyLink" href="privacy_policy.html?lang=fr" class="link">
+            Politique de confidentialité
+          </a>
+        </div>
       </div>
 
-      <div id="it" class="lang">
-        <h1 id="title">Benvenuto su Azan Now</h1>
-
-        <p id="description">
-          Questa pagina ti consente di accedere al nostro supporto ufficiale.
+      <div class="i18n i18n-it">
+        <p>
+          Scopri Azan Now — un'app semplice e incentrata sulla privacy che ti
+          offre orari di preghiera islamica precisi in base alla tua posizione.
+          Pensata per i musulmani di tutto il mondo, ti aiuta a rimanere
+          connesso alle tue preghiere quotidiane — senza raccogliere né
+          archiviare dati personali.
         </p>
 
-        <a id="supportLink" href="mailto:azannow.app@gmail.com" class="link">
-          Contatta il supporto
-        </a>
-        <a id="privacyLink" href="privacy_policy.html?lang=it" class="link">
-          Informativa sulla privacy
-        </a>
+        <h2>🕌 Funzionalità principali</h2>
+        <ul>
+          <li>
+            Orari di preghiera accurati in base alla tua posizione geografica
+          </li>
+          <li>
+            Metodo di calcolo predefinito per il tuo Paese (MWL, UOIF, Umm
+            al-Qura e altri)
+          </li>
+          <li>
+            Funziona con posizione approssimativa o precisa, in base ai permessi
+            concessi
+          </li>
+          <li>
+            🇲🇦 In Marocco: orari sincronizzati con il calendario ufficiale
+          </li>
+        </ul>
+
+        <h2>🔐 Privacy al primo posto</h2>
+        <p>
+          Azan Now non raccoglie alcun dato personale. Vengono utilizzate solo
+          informazioni tecniche anonime (tipo di dispositivo, sistema operativo,
+          versione dell’app) per migliorare le prestazioni. Se autorizzata, la
+          posizione viene utilizzata per visualizzare gli orari delle preghiere.
+          Nessun dato è collegato alla tua identità.
+        </p>
+
+        <h2>📱 Perché scegliere Azan Now?</h2>
+        <ul>
+          <li>Nessuna pubblicità né tracciamento commerciale</li>
+          <li>Leggero, veloce e senza bisogno di registrazione</li>
+          <li>Nessuna autorizzazione invasiva</li>
+          <li>Semplice e 100% rispettoso della tua privacy</li>
+        </ul>
+
+        <p class="highlighted">
+          Ideale per i musulmani che desiderano seguire le preghiere quotidiane
+          con precisione e totale riservatezza — ovunque si trovino.
+        </p>
 
         <div class="store-buttons">
           <a
@@ -335,21 +813,61 @@
             />
           </a>
         </div>
+
+        <div class="store-buttons">
+          <a id="supportLink" href="mailto:azannow.app@gmail.com" class="link">
+            Contatta il supporto
+          </a>
+          <a id="privacyLink" href="privacy_policy.html?lang=it" class="link">
+            Informativa sulla privacy
+          </a>
+        </div>
       </div>
 
-      <div id="nl" class="lang">
-        <h1 id="title">Welkom bij Azan Now</h1>
+      <div class="i18n i18n-nl">
+        Ontdek Azan Now — een eenvoudige, privacygerichte app die nauwkeurige
+        islamitische gebedstijden toont op basis van jouw locatie. Ontwikkeld
+        voor moslims wereldwijd, helpt de app je om je gebeden op tijd te
+        verrichten — zonder persoonlijke gegevens te verzamelen of op te slaan.
 
-        <p id="description">
-          Via deze pagina krijg je toegang tot onze officiële ondersteuning.
+        <h2>🕌 Belangrijkste functies</h2>
+        <ul>
+          <li>Precieze gebedstijden op basis van jouw geografische locatie</li>
+          <li>
+            Standaard rekenmethode afgestemd op jouw land (MWL, UOIF, Umm
+            al-Qura en meer)
+          </li>
+          <li>
+            Werkt met zowel geschatte als nauwkeurige locatie, afhankelijk van
+            je toestemming
+          </li>
+          <li>
+            🇲🇦 In Marokko: gebedstijden gesynchroniseerd met de officiële
+            kalender
+          </li>
+        </ul>
+
+        <h2>🔐 Privacy staat voorop</h2>
+        <p>
+          Azan Now verzamelt geen persoonlijke gegevens. Alleen anonieme
+          technische informatie (apparaattype, besturingssysteem, appversie)
+          wordt gebruikt voor prestatieanalyse. Locatiegegevens worden
+          uitsluitend gebruikt — indien toegestaan — om de juiste gebedstijden
+          weer te geven. Niets wordt gekoppeld aan je identiteit.
         </p>
 
-        <a id="supportLink" href="mailto:azannow.app@gmail.com" class="link">
-          Contact opnemen met ondersteuning
-        </a>
-        <a id="privacyLink" href="privacy_policy.html?lang=nl" class="link">
-          Privacybeleid
-        </a>
+        <h2>📱 Waarom kiezen voor Azan Now?</h2>
+        <ul>
+          <li>Geen advertenties of commerciële tracking</li>
+          <li>Lichtgewicht, snel en zonder account</li>
+          <li>Geen onnodige machtigingen</li>
+          <li>Volledige eenvoud en privacy</li>
+        </ul>
+
+        <p class="highlighted">
+          Perfect voor moslims die hun dagelijkse gebeden op een respectvolle,
+          nauwkeurige en privé manier willen volgen — altijd en overal.
+        </p>
 
         <div class="store-buttons">
           <a
@@ -376,21 +894,66 @@
             />
           </a>
         </div>
+
+        <div class="store-buttons">
+          <a id="supportLink" href="mailto:azannow.app@gmail.com" class="link">
+            Contact opnemen met ondersteuning
+          </a>
+          <a id="privacyLink" href="privacy_policy.html?lang=nl" class="link">
+            Privacybeleid
+          </a>
+        </div>
       </div>
 
-      <div id="pt" class="lang">
-        <h1 id="title">Bem-vindo ao Azan Now</h1>
-
-        <p id="description">
-          Esta página permite acessar o nosso suporte oficial.
+      <div class="i18n i18n-pt">
+        <p>
+          Conheça o Azan Now — um aplicativo simples e centrado na privacidade
+          que fornece horários de oração islâmica precisos com base na sua
+          localização. Projetado para muçulmanos do mundo inteiro, ele ajuda
+          você a manter sua rotina espiritual — sem coletar nem armazenar dados
+          pessoais.
         </p>
 
-        <a id="supportLink" href="mailto:azannow.app@gmail.com" class="link">
-          Contactar o suporte
-        </a>
-        <a id="privacyLink" href="privacy_policy.html?lang=pt" class="link">
-          Política de privacidade
-        </a>
+        <h2>🕌 Principais recursos</h2>
+        <ul>
+          <li>
+            Horários de oração precisos com base na sua localização geográfica
+          </li>
+          <li>
+            Método de cálculo padrão adaptado ao seu país (MWL, UOIF, Umm
+            al-Qura e outros)
+          </li>
+          <li>
+            Compatível com localização precisa ou aproximada, conforme as
+            permissões concedidas
+          </li>
+          <li>
+            🇲🇦 No Marrocos: horários sincronizados com o calendário oficial
+          </li>
+        </ul>
+
+        <h2>🔐 Privacidade em primeiro lugar</h2>
+        <p>
+          O Azan Now não coleta dados pessoais. Apenas informações técnicas
+          anônimas (tipo de dispositivo, sistema operacional, versão do app) são
+          utilizadas para análise de desempenho. A localização, se autorizada, é
+          usada somente para exibir os horários de oração. Nenhuma informação é
+          vinculada à sua identidade.
+        </p>
+
+        <h2>📱 Por que escolher o Azan Now?</h2>
+        <ul>
+          <li>Sem rastreamento comercial ou anúncios</li>
+          <li>Rápido, leve e sem necessidade de login</li>
+          <li>Permissões reduzidas ao essencial</li>
+          <li>Simples e 100% privado</li>
+        </ul>
+
+        <p class="highlighted">
+          Perfeito para muçulmanos que buscam praticidade e confiança para
+          acompanhar suas orações com total respeito à privacidade — onde
+          estiverem.
+        </p>
 
         <div class="store-buttons">
           <a
@@ -417,6 +980,15 @@
             />
           </a>
         </div>
+
+        <div class="store-buttons">
+          <a id="supportLink" href="mailto:azannow.app@gmail.com" class="link">
+            Contactar o suporte
+          </a>
+          <a id="privacyLink" href="privacy_policy.html?lang=pt" class="link">
+            Política de privacidade
+          </a>
+        </div>
       </div>
     </div>
 
@@ -429,9 +1001,12 @@
         document.documentElement.lang = selected;
         document.documentElement.dir = selected === "ar" ? "rtl" : "ltr";
 
-        const langs = document.querySelectorAll(".lang");
-        langs.forEach((div) => div.classList.remove("active"));
-        document.getElementById(selected).classList.add("active");
+        document
+          .querySelectorAll(".i18n")
+          .forEach((div) => div.classList.remove("active"));
+        document
+          .querySelectorAll(`.i18n-${selected}`)
+          .forEach((el) => el.classList.add("active"));
       }
 
       const params = new URLSearchParams(window.location.search);
