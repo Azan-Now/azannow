@@ -78,7 +78,7 @@
 
   <body>
     <header>
-      <a href="index.html">
+      <a id="logo_link" href="index.html">
         <img src="logo.png" alt="Azan Now Logo" width="150" height="150" />
       </a>
 
@@ -502,6 +502,10 @@
         const langs = document.querySelectorAll(".lang");
         langs.forEach((div) => div.classList.remove("active"));
         document.getElementById(selected).classList.add("active");
+
+        document.getElementById(
+          "logo_link"
+        ).href = `index.html?lang=${selected}`;
       }
 
       const params = new URLSearchParams(window.location.search);
